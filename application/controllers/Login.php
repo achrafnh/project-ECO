@@ -27,6 +27,8 @@ class Login extends CI_Controller {
 
     //Default function, redirects to logged in user area
     public function index() {
+        if ($this->session->userdata('superadmin_login') == 1)
+            redirect(base_url() . 'index.php?superadmin/dashboard', 'refresh');
 
         if ($this->session->userdata('admin_login') == 1)
             redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
@@ -54,6 +56,20 @@ class Login extends CI_Controller {
       $email = $this->input->post('email');
       $password = $this->input->post('password');
       $credential = array('email' => $email, 'password' => sha1($password));
+
+        // Checking login credential for superadmin
+        $query = $this->db->get_where('superadmin', $credential);
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            $this->session->set_userdata('superadmin_login', '1');
+            $this->session->set_userdata('superadmin_id', $row->superadmin_id);
+            $this->session->set_userdata('login_user_id', $row->superadmin_id);
+            $this->session->set_userdata('name', $row->name);
+            $this->session->set_userdata('login_type', 'superadmin');
+            redirect(base_url() . 'index.php?superadmin/dashboard', 'refresh');
+        }
+
+
       // Checking login credential for admin
       $query = $this->db->get_where('admin', $credential);
       if ($query->num_rows() > 0) {

@@ -19,7 +19,7 @@ if ( ! function_exists('email_validation'))
 	function email_validation($email){
 		$ci=& get_instance();
 		$num_rows = 0;
-		$user_array = array('admin', 'teacher', 'parent', 'student', 'accountant', 'librarian');
+		$user_array = array('admin','school', 'teacher', 'parent', 'student', 'accountant', 'librarian');
 		$size = sizeof($user_array);
 
 		for($i = 0; $i < $size; $i++){

@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="main">
-	&copy; 2017 <strong>Ekattor School Manager | Version 5.0</strong>.
+	&copy; 2017 <strong>By nhaila | Version 1.0</strong>.
     Developed by
-	<a href="http://creativeitem.com"
-    	target="_blank">Creativeitem</a>
+	<a href="#"
+    	target="_blank">Casa</a>
 </footer>

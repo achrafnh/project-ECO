@@ -97,7 +97,7 @@ $('#submit_button').attr('disabled', 'disabled');
 			    	toastr.success("<?php echo get_phrase('file_generated'); ?>");
 						$("#bulk").attr('href', response);
 						jQuery('#bulk')[0].click();
-			    	//document.location = response;
+			    	document.location = response;
 			  	}
 			});
 		}

@@ -30,6 +30,8 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/dashboard', 'refresh');
     }
 
+
+
     /***ADMIN DASHBOARD***/
     function dashboard()
     {

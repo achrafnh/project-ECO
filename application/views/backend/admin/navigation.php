@@ -345,13 +345,8 @@
             </a>
         </li>
 
-        <!-- DORMITORY -->
-        <li class="<?php if ($page_name == 'dormitory') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/dormitory">
-                <i class="entypo-home"></i>
-                <span><?php echo get_phrase('dormitory'); ?></span>
-            </a>
-        </li>
+
+
 
         <!-- NOTICEBOARD -->
         <li class="<?php if ($page_name == 'noticeboard' || $page_name == 'noticeboard_edit') echo 'active'; ?> ">
